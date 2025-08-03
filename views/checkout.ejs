@@ -1,0 +1,24 @@
+<!-- views/checkout.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Checkout</h2>
+    <ul>
+      <% cart.forEach(item => { %>
+        <li><%= item.name %> - $<%= item.price %></li>
+      <% }) %>
+    </ul>
+    <p><strong>Total:</strong> $<%= total.toFixed(2) %></p>
+    <form method="POST" action="/checkout">
+      <button type="submit">Place Order</button>
+    </form>
+    <a href="/cart">Back to Cart</a>
+  </div>
+</body>
+</html>

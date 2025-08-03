@@ -1,0 +1,27 @@
+<!-- views/dashboard.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, <%= user.name %>!</h1>
+    <p>Your role: <strong><%= user.role %></strong></p>
+
+    <% if (user.role === 'admin') { %>
+      <a href="/product/add">Add New Product</a><br/>
+      <a href="/products/manage">Manage Products</a>
+    <% } else { %>
+      <a href="/products">View Products</a><br/>
+      <a href="/cart">Go to Cart</a>
+    <% } %>
+
+    <br /><br />
+    <form method="POST" action="/logout">
+      <button type="submit">Logout</button>
+    </form>
+  </div>
+</body>
+</html>

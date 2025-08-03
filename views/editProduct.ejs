@@ -1,0 +1,10 @@
+<h1>Edit Product</h1>
+
+<form action="/product/edit/<%= product.id %>" method="POST">
+  <label>Name: <input type="text" name="name" value="<%= product.name %>" required></label><br>
+  <label>Description: <textarea name="description" required><%= product.description %></textarea></label><br>
+  <label>Price: <input type="number" name="price" step="0.01" value="<%= product.price %>" required></label><br>
+  <button type="submit">Update Product</button>
+</form>
+
+<a href="/product/manage">Back to Manage Products</a>

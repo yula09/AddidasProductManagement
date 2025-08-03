@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<div class="container mt-5">
+  <h2 class="mb-4">Add New Product</h2>
+  <form action="/product/add" method="POST">
+    <div class="mb-3">
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label>Description</label>
+      <textarea name="description" class="form-control" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label>Price</label>
+      <input type="number" name="price" step="0.01" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label>Image URL</label>
+      <input type="url" name="image_url" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+    <a href="/product/manage" class="btn btn-secondary">Back to Manage</a>
+  </form>
+</div>
+<%- include('partials/footer') %>
